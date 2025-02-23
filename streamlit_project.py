@@ -100,10 +100,6 @@ st.title("Shot Map Visualization")
 filtered_df["X"] = filtered_df["location"].apply(lambda loc: float(loc[0]))
 filtered_df["Y"] = filtered_df["location"].apply(lambda loc: float(loc[1]))
 
-# Ensure valid coordinate range
-filtered_df["X"] = np.clip(filtered_df["X"], 0, 120)  
-filtered_df["Y"] = np.clip(filtered_df["Y"], 0, 80)   
-
 # Calculate statistics
 total_shots = filtered_df.shape[0]
 total_goals = filtered_df[filtered_df['shot_outcome'] == 'Goal'].shape[0]
