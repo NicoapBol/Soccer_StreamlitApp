@@ -85,6 +85,7 @@ match_result = df.loc[df["match_info"] == match, "outcome"].values[0]
 player = st.selectbox("Select a player", df[df['match_info'] == match]['player'].sort_values().unique(), index=None)
 filtered_df = filter_data(df, match, player)
 
+st.title("Shot Map Visualization")
 
 pitch = VerticalPitch(pitch_type='statsbomb', line_zorder=2, pitch_color='#f0f0f0', line_color='black', half=True)
 fig, ax = pitch.draw(figsize=(10, 10))
@@ -94,47 +95,12 @@ st.pyplot(fig)
 
 ########
 
-st.title("Shot Map Visualization")
-
-# Extract X and Y from 'location' column
-filtered_df["X"] = filtered_df["location"].apply(lambda loc: float(loc[0]))
-filtered_df["Y"] = filtered_df["location"].apply(lambda loc: float(loc[1]))
 
 # Calculate statistics
 total_shots = filtered_df.shape[0]
 total_goals = filtered_df[filtered_df['shot_outcome'] == 'Goal'].shape[0]
 total_xG = filtered_df["shot_statsbomb_xg"].sum()
 xG_per_shot = total_xG / total_shots if total_shots > 0 else 0
-
-# Create second shot map
-pitch = VerticalPitch(
-    pitch_type='statsbomb',
-    half=True,
-    pitch_color='#0C0D0E',
-    line_color='white',
-    linewidth=0.75
-)
-
-fig, ax = plt.subplots(figsize=(10, 10))  # Reasonable figure size
-fig.patch.set_facecolor('#0C0D0E')
-
-pitch.draw(ax=ax)
-
-# Plot shots
-for _, shot in filtered_df.iterrows():
-    if not np.isnan(shot["X"]) and not np.isnan(shot["Y"]):  # Ensure valid data
-        pitch.scatter(
-            shot["X"],
-            shot["Y"],
-            s=1000 * shot["shot_statsbomb_xg"] if shot["shot_statsbomb_xg"] > 0 else 50,
-            color='green' if shot["shot_outcome"] == 'Goal' else 'grey',
-            ax=ax,
-            alpha=0.7,
-            linewidth=0.8,
-            edgecolor='white'
-        )
-
-st.pyplot(fig)
 
 # Display statistics
 st.markdown(f"""
