@@ -53,8 +53,9 @@ def plot_shots(df, ax, pitch):
             x=shot_x,
             y=shot_y,
             ax=ax,
-            s=(shot_xG ** 0.5) * 700 ,
-            color='green' if x['shot_outcome'] == 'Goal' else 'gray',
+            s= 340,
+            #s=(shot_xG ** 0.5) * 900 ,
+            color='red' if x['shot_outcome'] == 'Goal' else 'gray',
             edgecolors='black',
             alpha=1 if x['shot_outcome'] == 'Goal' else .5,
             zorder=2 if x['shot_outcome'] == 'Goal' else 1,
@@ -64,12 +65,13 @@ def plot_shots(df, ax, pitch):
         # ✅ Attach xG text **inside pitch.scatter()** using pitch.annotate()
         pitch.annotate(
             f"{shot_xG:.2f}",
-            xy=(shot_x- 2.2, shot_y),
+            xy=(shot_x- 3.2, shot_y),
             ax=ax,
-            fontsize=10,
+            fontsize=12,
             color="#d32d44",
             va="bottom",  # Align text below the marker
             ha="center",
+            fontweight="bold"
         )
 
 
