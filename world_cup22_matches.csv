@@ -1,0 +1,8 @@
+,match_id,match_date,kick_off,competition,season,home_team,away_team,home_score,away_score,match_status,competition_stage,stadium,match_info,outcome
+1,3869151,2022-12-03,21:00:00.000,International - FIFA World Cup,2022,Argentina,Australia,2,1,available,Round of 16,Ahmad bin Ali Stadium,Argentina Vs. Australia (2022-12-03),Argentina 2 - Australia 1
+6,3869321,2022-12-09,21:00:00.000,International - FIFA World Cup,2022,Netherlands,Argentina,2,2,available,Quarter-finals,Lusail Stadium,Netherlands Vs. Argentina (2022-12-09),Netherlands 2 - Argentina 2
+9,3869685,2022-12-18,17:00:00.000,International - FIFA World Cup,2022,Argentina,France,3,3,available,Final,Lusail Stadium,Argentina Vs. France (2022-12-18),Argentina 3 - France 3
+11,3857264,2022-11-30,21:00:00.000,International - FIFA World Cup,2022,Poland,Argentina,0,2,available,Group Stage,Stadium 974,Poland Vs. Argentina (2022-11-30),Poland 0 - Argentina 2
+13,3857289,2022-11-26,21:00:00.000,International - FIFA World Cup,2022,Argentina,Mexico,2,0,available,Group Stage,Lusail Stadium,Argentina Vs. Mexico (2022-11-26),Argentina 2 - Mexico 0
+19,3869519,2022-12-13,21:00:00.000,International - FIFA World Cup,2022,Argentina,Croatia,3,0,available,Semi-finals,Lusail Stadium,Argentina Vs. Croatia (2022-12-13),Argentina 3 - Croatia 0
+37,3857300,2022-11-22,12:00:00.000,International - FIFA World Cup,2022,Argentina,Saudi Arabia,1,2,available,Group Stage,Lusail Stadium,Argentina Vs. Saudi Arabia (2022-11-22),Argentina 1 - Saudi Arabia 2
